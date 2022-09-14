@@ -1,4 +1,4 @@
 Link app yang telah di deploy:
-[Katalog](https://rikzapbp2.herokuapp.com/)
+[KATALOG](https://rikzapbp2.herokuapp.com/katalog/)
 
 Penjelasan:
