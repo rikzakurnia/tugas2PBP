@@ -1,0 +1,113 @@
+[
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 1,
+        "fields": {
+            "status_watched" : "True",
+            "judul" : "One Piece : Film RED",
+            "rating" : 3.95,
+            "release_date" : "2022-08-06",
+            "review" : "https://myanimelist.net/anime/50410/One_Piece_Film__Red/reviews"
+        }
+    },
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 2,
+        "fields": {
+            "status_watched" :"False",
+            "judul" : "Bleach",
+            "rating" : 3.94,
+            "release_date" :"2004-10-05",
+            "review" : "https://myanimelist.net/anime/269/Bleach/reviews"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 3,
+        "fields": { 
+            "status_watched" : "False",
+            "judul" : "Josee, the Tiger and the Fish",
+            "rating" : 4.22,
+            "release_date" : "2020-12-25",
+            "review" : "https://myanimelist.net/anime/40787/Josee_to_Tora_to_Sakana-tachi/reviews"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 4,
+        "fields": {
+            "status_watched" : "True",
+            "judul" : "Your Name",
+            "rating" : 4.2,
+            "release_date" : "2016-05-27",
+            "review" : "https://myanimelist.net/manga/99314/Kimi_no_Na_wa/reviews"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 5,
+        "fields": {
+            "status_watched" : "True",
+            "judul" : "A Silent Voice",
+            "rating" : 4.47,
+            "release_date" : "2016-09-17",
+            "review" : "https://myanimelist.net/anime/28851/Koe_no_Katachi/reviews"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 6,
+        "fields": {
+            "status_watched" : "True",
+            "judul" : "Jujutsu Kaisen 0",
+            "rating" : 4.25,
+            "release_date" : "2021-12-24",
+            "review" : "https://myanimelist.net/anime/48561/Jujutsu_Kaisen_0_Movie/reviews"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 7,
+        "fields": {
+            "status_watched" : "True",
+            "judul" : "Godzilla vs. Kong",
+            "rating" : 3.15,
+            "release_date" : "2021-05-31",
+            "review" : "https://www.imdb.com/title/tt5034838/reviews?ref_=tt_urv"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 8,
+        "fields": {
+            "status_watched" : "False",
+            "judul" : "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+            "rating" : 4.32,
+            "release_date" : "2020-10-16",
+            "review" : "https://myanimelist.net/anime/40456/Kimetsu_no_Yaiba_Movie__Mugen_Ressha-hen/reviews"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 9,
+        "fields": {
+            "status_watched" : "False",
+            "judul" : "Zack Snyder's Justice League",
+            "rating" : 4.00,
+            "release_date" : "2021-03-18",
+            "review" : "https://www.imdb.com/title/tt12361974/reviews?ref_=tt_urv"
+        }
+    },    
+    {
+        "model": "mywatchlist.moviewatchlist",
+        "pk": 10,
+        "fields": {
+            "status_watched" : "True",
+            "judul" : "Minions: The Rise of Gru",
+            "rating" : 3.3,
+            "release_date" : "2022-07-01",
+            "review" : "https://www.imdb.com/title/tt5113044/reviews?ref_=tt_urv"
+        }
+    }
+    
+]
