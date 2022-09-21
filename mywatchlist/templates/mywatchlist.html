@@ -2,6 +2,7 @@
 
  {% block content %}
 
+
   <h1>Tugas 03 Assignment PBP/PBD</h1>
 
   <h5>Name: </h5>
@@ -18,13 +19,17 @@
       <th>Release Date</th>
       <th>Review</th>
     </tr>
-    {% for movie in judul_movie %}
+    {% for movie in list_movie %}
     <tr>
-        <th>{{movie.status_wathed}}</th>
-        <th>{{movie.judul}}</th>
-        <th>{{movie.rating}}</th>
-        <th>{{movie.release_date}}</th>
-        <th>{{movie.review}}</th>
+        {% if movie.status_watched %}
+          <td>Yes</td>
+        {% else %}
+          <td>No</td>
+        {% endif %}
+        <td>{{movie.judul}}</td>
+        <td>{{movie.rating}}</td>
+        <td>{{movie.release_date}}</td>
+        <td><a href="{{ movie.review }}">{{movie.judul}}</a> </td>
     </tr>
     {% endfor %}
 
