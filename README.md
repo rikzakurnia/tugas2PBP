@@ -10,9 +10,13 @@ Dalam mengerjakan tugas 3 ini, hal yang pertama saya lakukan adalah menjalankan 
 `python manage.py startapp mywatchlist` Tujuannya adalah untuk membuat folder untuk app mywatchlist secara otomatis. Selanjutanya saya mengatur urls pada folder project_django untuk routing ke app yg baru dibuat. Lalu dilanjutkan dengan mengatur MVT, yaitu pada models.py saya menambahkan MovieWatchList dengan judul, status_watched, rating, release_date, dan review sebagi attribute. Lalu saya melakukan migration untuk memasukan models tersebut. Pada views.py saya membuat fungsi show_watchlist untuk mengirim data ke template. Selanjutnya saya membuat file watchlist.html untuk menampilkan data. Data yang akan ditampilkan yaitu berupa film-film yang mau atau sudag saya tonton. Untuk menambahkannya saya membuat file initial_watchlist_data.json dan memasukan nama dan atribut lainnya secara manual. Setelahnya saya menjalankan command `python manage.py loaddata initial_wishlist_data.json` untuk memasukkan data. Langkah selanjutnya sama seperti pada tutorial saya menambahkan fungsi show_xml dan show_json dan mengatur routingnya. Lalu saya menambahkan fungsi test. Untuk melengkapi bagian bonus, saya menambahkan variabel untuk menghitung jumlah film yang ditonton dan mengatur if else statement pada views.py dan watchlist.html untuk menghandle kondisi yang benar. Pada file html juga saya mengubah linknya menjadi bentuk hyperlinkagar lebih mudah digunakan.
 
 Postman:
+![tug3pbp1](https://user-images.githubusercontent.com/112408954/191659509-235ac930-8b0e-4a7e-b4dd-da54c43117d0.PNG)
 
 
+![tug3pbp2](https://user-images.githubusercontent.com/112408954/191659527-35f88c08-95d4-4eb3-be93-4048c0931627.PNG)
 
+
+![tug3pbp3](https://user-images.githubusercontent.com/112408954/191659540-5b156310-d850-4e91-861c-b06cbdb1da4c.PNG)
 
 ---
 
