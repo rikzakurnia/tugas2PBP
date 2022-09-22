@@ -2,6 +2,15 @@
 ## Tugas 3
 Link :  [HTML](https://rikzapbp2.herokuapp.com/mywatchlist/html) -- [XML](https://rikzapbp2.herokuapp.com/mywatchlist/xml) -- [JSON](https://rikzapbp2.herokuapp.com/mywatchlist/json)
 
+- Html digunakan untuk menyajikan data yang telah terstruktur ke halaman web. Sementara xml dan json digunakan untuk menyimpan dan mengirim data dari dan ke database. Perbedaan yang paling terlihat adalah cara menulis kode yang berbeda seperti untuk merepresentasukan suatu object. Json menggunakan data structure berupa map yang memiliki key dan value sedangkan xml menggunakan structrure tree dengan menggunakan tag sama seperti html. Kelebihan json yaitu lebih mudah dibaca dan lebih cepat dijalankan dibanding xml. Sementara kelebihan xml yaitu bisa menggunakan array dan lebih secured.
+
+- Data delivery diperlukan agar data yang ada di database kita dapat ditampilkan ke web(platform) sehingga bisa dilihat oleh orang yang kita tuju(pengguna). Data yang ingin kita tampilkan pasti akan berubah sesuai perubahan kondisi dan permintaan pengguna. Dengan adanya data delivery, data yang akan ditampilkan dapat disesuaikan dengan permintaan sehingga tidak semua data yang ada di database perlu ditampilkan dan bisa menghemat waktu. 
+
+Dalam mengerjakan tugas 3 ini, hal yang pertama saya lakukan adalah menjalankan command 
+> python manage.py startapp mywatchlist
+Tujuannya adalah untuk membuat folder untuk app mywatchlist secara otomatis. Selanjutanya saya mengatur urls pada folder project_django untuk routing ke app yg baru dibuat. Lalu dilanjutkan dengan mengatur MVT, yaitu pada models.py saya menambahkan 
+
+
 
 
 ---
