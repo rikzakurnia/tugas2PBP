@@ -14,7 +14,7 @@ def show_watchlist(request):
             jumlah_movie_ditonton += 1
     
     banyak_nonton = False
-    if jumlah_movie_ditonton>(len(list_movie_watchlist)/2):
+    if jumlah_movie_ditonton>=(len(list_movie_watchlist)//2):
         banyak_nonton = True
 
     context = {
