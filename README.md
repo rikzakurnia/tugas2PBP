@@ -1,3 +1,13 @@
+
+## Tugas 3
+Link :  [HTML](https://rikzapbp2.herokuapp.com/mywatchlist/html) -- [XML](https://rikzapbp2.herokuapp.com/mywatchlist/xml) -- [JSON](https://rikzapbp2.herokuapp.com/mywatchlist/json)
+
+
+
+---
+
+## Tugas 2
+
 Link app yang telah di deploy:
 [KATALOG](https://rikzapbp2.herokuapp.com/katalog/)
 
