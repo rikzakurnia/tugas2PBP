@@ -7,7 +7,9 @@ Link :  [HTML](https://rikzapbp2.herokuapp.com/mywatchlist/html) -- [XML](https:
 - Data delivery diperlukan agar data yang ada di database kita dapat ditampilkan ke web(platform) sehingga bisa dilihat oleh orang yang kita tuju(pengguna). Data yang ingin kita tampilkan pasti akan berubah sesuai perubahan kondisi dan permintaan pengguna. Dengan adanya data delivery, data yang akan ditampilkan dapat disesuaikan dengan permintaan sehingga tidak semua data yang ada di database perlu ditampilkan dan bisa menghemat waktu. 
 
 Dalam mengerjakan tugas 3 ini, hal yang pertama saya lakukan adalah menjalankan command 
-> python manage.py startapp mywatchlist<
+'''
+python manage.py startapp mywatchlist
+'''
 Tujuannya adalah untuk membuat folder untuk app mywatchlist secara otomatis. Selanjutanya saya mengatur urls pada folder project_django untuk routing ke app yg baru dibuat. Lalu dilanjutkan dengan mengatur MVT, yaitu pada models.py saya menambahkan 
 
 
