@@ -7,10 +7,7 @@ Link :  [HTML](https://rikzapbp2.herokuapp.com/mywatchlist/html) -- [XML](https:
 - Data delivery diperlukan agar data yang ada di database kita dapat ditampilkan ke web(platform) sehingga bisa dilihat oleh orang yang kita tuju(pengguna). Data yang ingin kita tampilkan pasti akan berubah sesuai perubahan kondisi dan permintaan pengguna. Dengan adanya data delivery, data yang akan ditampilkan dapat disesuaikan dengan permintaan sehingga tidak semua data yang ada di database perlu ditampilkan dan bisa menghemat waktu. 
 
 Dalam mengerjakan tugas 3 ini, hal yang pertama saya lakukan adalah menjalankan command 
-```
-python manage.py startapp mywatchlist
-```
-Tujuannya adalah untuk membuat folder untuk app mywatchlist secara otomatis. Selanjutanya saya mengatur urls pada folder project_django untuk routing ke app yg baru dibuat. Lalu dilanjutkan dengan mengatur MVT, yaitu pada models.py saya menambahkan 
+`python manage.py startapp mywatchlist` Tujuannya adalah untuk membuat folder untuk app mywatchlist secara otomatis. Selanjutanya saya mengatur urls pada folder project_django untuk routing ke app yg baru dibuat. Lalu dilanjutkan dengan mengatur MVT, yaitu pada models.py saya menambahkan MovieWatchList dengan judul, status_watched, rating, release_date, dan review sebagi attribute. Lalu saya melakukan migration untuk memasukan models tersebut. Pada views.py saya membuat fungsi show_watchlist untuk mengirim data ke template. Selanjutnya saya membuat file watchlist.html untuk menampilkan data. Data yang akan ditampilkan yaitu berupa film-film yang mau atau sudag saya tonton. Untuk menambahkannya saya membuat file initial_watchlist_data.json dan memasukan nama dan atribut lainnya secara manual. Setelahnya saya menjalankan command `python manage.py loaddata initial_wishlist_data.json` untuk memasukkan data. Langkah selanjutnya sama seperti pada tutorial saya menambahkan fungsi show_xml dan show_json dan mengatur routingnya. Lalu saya menambahkan fungsi test. Untuk melengkapi bagian bonus, saya menambahkan if el
 
 
 
