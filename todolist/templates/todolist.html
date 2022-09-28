@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Tugas 4 Assignment PBP/PBD</h1>
+
+    <h5>Name: </h5>
+    <p>{{nama}}</p>
+  
+    <h5>Student ID: </h5>
+    <p>{{npm}}</p>
+
+    <h2>Selamat datang {{user}} !</h2>
+    <button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru </a></button>
+
+    <table>
+        <tr>
+        <th>Judul</th>
+        <th>Tanggal Pembuatan</th>
+        <th>Deskripsi</th>
+        <th>Selesai?</th>
+        <th>Belum Selesai?</th>
+        
+        
+
+        </tr>
+        
+        {% for task in data_todolist %}
+            {% if task.pengguna == pengguna %}
+                <tr>
+                    <td>{{task.judul}}</td>
+                    <td>{{task.tanggal}}</td>
+                    <td>{{task.deskripsi}}</td>
+                    {% if task.status %}
+                        <td>Ya</td>
+                    {% else %}
+                        <td>Tidak</td>
+                    {% endif %}
+                    {% if task.status %}
+                        <td>Tidak</td>
+                    {% else %}
+                        <td>Ya</td>
+                    {% endif %}
+                    <td><button><a href="change-status/{{task.id}}">Ubah Status</a</button></td>
+                    <td><button><a href="delete/{{task.id}}">Delete</a></button></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    <br>
+    
+    <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+
+{% endblock content %}
