@@ -31,14 +31,14 @@
                     <td>{{task.tanggal}}</td>
                     <td>{{task.deskripsi}}</td>
                     {% if task.status %}
-                        <td>Ya</td>
+                        <td>Yes</td>
                     {% else %}
-                        <td>Tidak</td>
+                        <td>-</td>
                     {% endif %}
                     {% if task.status %}
-                        <td>Tidak</td>
+                        <td>-</td>
                     {% else %}
-                        <td>Ya</td>
+                        <td>Yes</td>
                     {% endif %}
                     <td><button><a href="change-status/{{task.id}}">Ubah Status</a</button></td>
                     <td><button><a href="delete/{{task.id}}">Delete</a></button></td>
