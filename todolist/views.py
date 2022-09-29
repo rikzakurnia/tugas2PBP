@@ -26,7 +26,6 @@ def show_todolist(request):
     'data_todolist': data_todolist,
     'nama': 'Rikza Kurnia',
     'npm' : '2106701293',
-    'last_login': request.COOKIES['last_login'],
     'pengguna' : pengguna,
     }
     return render(request, "todolist.html", context)
