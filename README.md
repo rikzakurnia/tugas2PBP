@@ -1,5 +1,13 @@
 ## Tugas 4
 Link :  [Todolist](https://rikzapbp2.herokuapp.com/todolist)
+- `{% csrf_token %}` berfungsi untuk mencegah terjadinya serangan Cross Site Request Forgery (CSRF), yaitu serangan berupa request palsu yang tidak diinginkan oleh user.  Cara kerja csrf token yaitu dengan membuat suatu token dari server-side yang akan selalu dicek ketika user melakukan request. Jika suatu request tidak memiliki token tadi maka request tersebut tidak akan dieksekusi. Jika kita tidak menggunakan `{% csrf_token %}` maka CSRF attack bisa terjadi dan keamanan user dan web itu sendiri tidak terjamin.
+
+- Form dapat dibuat tanpa menggunakan `{{ form.as_table }}`. Untuk membuat form secara manual, kita perlu mendefinisikan terlebih dahulu url untuk mengirim data dan method yang akan digunakan yaitu GET atau POST dalam tag `<form>`. Selanjutnya kita bisa membuat elemen-elemen lainnya untuk menerima input atau memberi label/nama.
+
+
+- Alur datanya berawal dari request user. Setelah menerima request server akan menampilkan file html yang memiliki form di dalamnya. User dapat mengisi form tersebut dan mengirimkan request lagi ke server. Request yang dikirim akan dijalankan sesuai URL untuk mengirim data dan method yg digunakan(GET/POST). Setelah itu data yang dikirimkan akan diproses untuk disimpan ke database dan/atau untuk menampilkan halaman baru. Jika terjadi perubahan data pada database maka html akan menampilkan halaman yang telah diperbarui ke user.
+
+Hal yang pertama saya lakukan adalah menjalankan fungsi `startapp` untuk membuat folder baru yaitu "todolist". Selanjutnya mengatur routing pada urls di project_django dan todolist. Lalu membuat models yaitu Task dengan attribute pengguna, tanggal, judul dan deskripsi serta melakukan makemigrations dan migrate. Selanjutnya saya mengimplementasikan form untuk login, registrasi dan logout sesuai dengan yang telah dipelajari pada tutorial sebelumnya. Lalu saya membuat file todolist.html dan mengatur tampilan web dengan menambahkan tabel serta beberapa label dan tombol. Membuat file create_task.html untuk menerima input berupa judul dan deskripsi serta menambahkan fungsi create_task pada views.py untuk menjalankan dan menyimpan data. Lalu saya menambahkan kolom sebagai status mengerjakan dan tombol untuk ubah status tersebut pada file html. 
 
 ---
 ## Tugas 3
