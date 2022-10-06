@@ -1,54 +1,98 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>Tugas 4 Assignment PBP/PBD</h1>
+<style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-    <h5>Name: </h5>
-    <p>{{nama}}</p>
-  
-    <h5>Student ID: </h5>
-    <p>{{npm}}</p>
-
-    <h2>Selamat datang {{user}} !</h2>
-    <button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru </a></button>
-
-    <table>
-        <tr>
-        <th>Judul</th>
-        <th>Tanggal Pembuatan</th>
-        <th>Deskripsi</th>
-        <th>Selesai?</th>
-        <th>Belum Selesai?</th>
-        
-        
-
-        </tr>
-        
-        {% for task in data_todolist %}
-            {% if task.pengguna == pengguna %}
-                <tr>
-                    <td>{{task.judul}}</td>
-                    <td>{{task.tanggal}}</td>
-                    <td>{{task.deskripsi}}</td>
-                    {% if task.status %}
-                        <td>Yes</td>
-                    {% else %}
-                        <td>-</td>
-                    {% endif %}
-                    {% if task.status %}
-                        <td>-</td>
-                    {% else %}
-                        <td>Yes</td>
-                    {% endif %}
-                    <td><button><a href="change-status/{{task.id}}">Ubah Status</a</button></td>
-                    <td><button><a href="delete/{{task.id}}">Delete</a></button></td>
-                </tr>
-            {% endif %}
-        {% endfor %}
-    </table>
-    <br>
+    /*Apply css properties to container class*/
+    .container {
+      position: relative;
+      width: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+     /*Apply css properties to card class*/
+     .container .card {
+      position: relative;
+      padding: 5px 5px;
+      box-shadow: 0 0px 20px rgb(65, 61, 61);
+      transition: 0.3s ease-in-out;
+    }
+    /*Apply css properties to card class when it get pointed by cursor*/
+   
+    .container .card:hover {
+      transform: scale(1.05);
+    }
     
-    <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 
+
+</style>
+{% load static %}
+<link rel="stylesheet" href="{% static 'todolist/style.css' %}"/>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">ToDo-List</a>
+      <a class="btn btn-outline-light" href="{% url 'todolist:logout' %}" role="button">Logout</a>
+    </div>
+</nav>
+<div class = "awal">
+    <h2>Selamat datang {{user}} !</h2>
+    <div>
+        <a class="btn btn-dark" href="{% url 'todolist:create_task' %}" role="button">Tambah Task</a>
+    </div>
+</div>
+<div class="container">
+    {% for task in data_todolist %}
+        {% if task.pengguna == pengguna %}
+            <div class="card">
+                {% if task.status %}
+                    <div class="card text-center h-100 border-success mb-3 text-success" style="width: 20rem;">
+                        <div class="card-header bg-success text-white">Selesai</div>
+
+                        <div class="card-body">
+                        <h5 class="card-title">{{task.judul}}</h5>
+                        <p class="card-text">{{task.deskripsi}}</p>
+                        </div>
+                        
+                        <div class="button_in_card text-center mb-2">
+                            <a href="change-status/{{task.id}}" class="btn btn-warning">Ubah Status</a>
+                            <a href="delete/{{task.id}}" class="btn btn-danger">Delete</a>  
+                        </div>
+                        
+                        <div class="card-footer text-muted ">
+                            {{task.tanggal}}
+                        </div>
+                    </div>
+                
+                {% else %}
+                    <div class="card text-center h-100" style="width: 20rem;">
+                        <div class="card-header">Belum Selesai</div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{task.judul}}</h5>
+                            <p class="card-text">{{task.deskripsi}}</p>
+                        </div>
+                        
+                        <div class="button_in_card text-center mb-2">
+                            <a href="change-status/{{task.id}}" class="btn btn-warning">Ubah Status</a>
+                            <a href="delete/{{task.id}}" class="btn btn-danger">Delete</a>  
+                        </div>
+                        
+                        <div class="card-footer text-muted">
+                            {{task.tanggal}}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
 
 {% endblock content %}
