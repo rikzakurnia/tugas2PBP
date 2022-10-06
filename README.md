@@ -11,7 +11,7 @@ Beberapa selector:
   - Class selector : melakukan styling pada suatu class, class tidak unik seperti id sehingga bisa dilakukan styling ke banyak class sekaligus
   - Element selector : melakukan styling pada setiap element dengan tag tertentu.
 
-Pada tugas kali ini saya berfokus untuk memperindah tampilan pada halaman utama todolist. Yang saya lakukan adalah mencari beberapa referensi mengenai tampilan card seperti pada link [Ini](https://getbootstrap.com/docs/5.0/components/card/).
+Pada tugas kali ini saya berfokus untuk memperindah tampilan pada halaman utama todolist. Yang pertama saya lakukan adalah membuat static file untuk melakukan styling eksternal. Lalu saya menerapkan navbar dengan menggunakan bootstrap seperti pada tutorial sebelumnya dan melakukan styling pada beberapa komponen di file style.css. Selanjutnya saya mencari beberapa referensi mengenai tampilan card seperti pada link [Ini](https://getbootstrap.com/docs/5.0/components/card/) lalu menerapkannya secara internal di file html.
  
  
 ## Tugas 4
