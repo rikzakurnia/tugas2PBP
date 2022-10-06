@@ -1,7 +1,15 @@
 ## Tugas 5
 Link :  [Todolist](https://rikzapbp2.herokuapp.com/todolist)
-- 
-
+-  Perbedaan dari Inline, Internal, dan External CSS adalah pada lokasi penulisan styling yang akan dibuat. Pada Inline, sytling dilakukan di dalam tag html tertentu,  pada Internal, styling ditempatkan dalam file html dengan menggunakan tag <style>, sementara External,  styling dibuat pada file yang berbeda di luar file html yang akan diubah.
+Beberapa tag yang saya ketahui dan banyak gunakan dalam tugas ini yaitu:
+ - Untuk text : <a> untuk text yang dapat me-refer ke suatu link, <b> text yang ditampilkan dalam bold, <td> suatu cell dalam tabel, <th> header suatu tabel.
+ - <form> membuat suatu form, <input> menerima input untuk form
+  
+Beberapa selector:
+  - Inline styles : styling dalam tag <style>
+  - ID selector : melakukan styling pada element yang memiliki id tertentu, id bersifat unik sehingga hanya bisa merujuk pada satu id khusus.
+  - Class selector : melakukan styling pada suatu class, class tidak unik seperti id sehingga bisa dilakukan styling ke banyak class sekaligus
+  - Element selector : melakukan styling pada setiap element dengan tag tertentu.
 
 
 ## Tugas 4
