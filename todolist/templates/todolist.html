@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+<title>TODO-List</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <style>
     * {
@@ -32,7 +35,6 @@
     }
     
 
-
 </style>
 {% load static %}
 <link rel="stylesheet" href="{% static 'todolist/style.css' %}"/>
@@ -46,8 +48,40 @@
     <h2>Selamat datang {{user}} !</h2>
     <div>
         <a class="btn btn-dark" href="{% url 'todolist:create_task' %}" role="button">Tambah Task</a>
+        <a><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal_add_task" >Add Task</button></a>
     </div>
 </div>
+
+<div class="modal fade" id="modal_add_task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" id="form-add-task" >  
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="judul" class="col-form-label">Judul:</label>
+                    <input type="text" class="form-control" id="judul">
+                  </div>
+                <div class="mb-3">
+                    <label for="deskripsi" class="col-form-label">Deskripsi:</label>
+                    <textarea class="form-control" id="deskripsi"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <input class="btn btn-primary" type="submit" name="submit" onclick="addNew()" value="Add"/>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'todolist/style.css' %}"/>
 <div class="container">
     {% for task in data_todolist %}
         {% if task.pengguna == pengguna %}
@@ -94,5 +128,31 @@
         {% endif %}
     {% endfor %}
 </div>
+
+
+
+<script type="text/javascript">
+    function addNew(){
+        var data_task = {
+            judul : $("#judul").val(),
+            deskripsi : $("#deskripsi").val()
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/todolist/add/',
+            data: data_task.serialize(),
+            dataType : JSON,
+            success: function(res){
+                alert(res['msg'])
+            }
+        })
+    } 
+
+
+
+
+
+</script>
 
 {% endblock content %}

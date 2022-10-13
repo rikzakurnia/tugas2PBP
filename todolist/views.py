@@ -1,5 +1,9 @@
 import datetime
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
+from django.http import JsonResponse
+
+from django.core import serializers
 from django.urls import reverse
 
 from django.shortcuts import render
@@ -10,6 +14,8 @@ from django.contrib.auth import logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
+
+from django.forms.models import model_to_dict
 from todolist.models import Task
 from todolist.forms import CreateTask
 
@@ -84,9 +90,32 @@ def change_status(request, id):
     task = Task.objects.get(id=id)
     task.status = not task.status
     task.save()
-    return redirect('todolist:show_todolist')
+    return JsonResponse({}, status=200) 
 
 def delete(request, id):
     task = Task.objects.get(id=id)
     task.delete()
-    return redirect('todolist:show_todolist')
+    return JsonResponse({}, status=200) 
+
+def show_json(request):
+    task = Task.objects.all()
+    return HttpResponse(serializers.serialize("json", task), content_type="application/json")
+
+def add_task(request):
+    form = CreateTask()
+    if request.method == "POST":
+        form = CreateTask(request.POST)
+
+        if form.is_valid():
+            pengguna = request.user
+            judul = request.POST.get("judul")
+            deskripsi = request.POST.get("deskripsi")
+            new_task = Task(pengguna=pengguna, judul=judul, deskripsi=deskripsi)
+            new_task.save()
+            form.save()
+            return JsonResponse({'msg': 'Data saved'})
+
+        else:
+            return JsonResponse({'msg': 'ERROR FORM INVALID'})
+
+    return JsonResponse({'form': form})
