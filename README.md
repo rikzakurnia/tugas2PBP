@@ -1,3 +1,19 @@
+## Tugas 5
+Link :  [Todolist](https://rikzapbp2.herokuapp.com/todolist)
+-  Perbedaan dari Inline, Internal, dan External CSS adalah pada lokasi penulisan styling yang akan dibuat. Pada Inline, sytling dilakukan di dalam tag html tertentu,  pada Internal, styling ditempatkan dalam file html dengan menggunakan tag <style>, sementara External,  styling dibuat pada file yang berbeda di luar file html yang akan diubah.
+Beberapa tag yang saya ketahui dan banyak gunakan dalam tugas ini yaitu:
+ - Untuk text : `<a>` untuk text yang dapat me-refer ke suatu link, `<b>` text yang ditampilkan dalam bold, `<td>` suatu cell dalam tabel, `<th>` header suatu tabel.
+ - `<form>` membuat suatu form, `<input>` menerima input untuk form
+  
+Beberapa selector:
+  - Inline styles : styling dalam tag <style>
+  - ID selector : melakukan styling pada element yang memiliki id tertentu, id bersifat unik sehingga hanya bisa merujuk pada satu id khusus.
+  - Class selector : melakukan styling pada suatu class, class tidak unik seperti id sehingga bisa dilakukan styling ke banyak class sekaligus
+  - Element selector : melakukan styling pada setiap element dengan tag tertentu.
+
+Pada tugas kali ini saya berfokus untuk memperindah tampilan pada halaman utama todolist. Yang pertama saya lakukan adalah membuat static file untuk melakukan styling eksternal. Lalu saya menerapkan navbar dengan menggunakan bootstrap seperti pada tutorial sebelumnya dan melakukan styling pada beberapa komponen di file style.css. Selanjutnya saya mencari beberapa referensi mengenai tampilan card seperti pada link [Ini](https://getbootstrap.com/docs/5.0/components/card/) lalu menerapkannya secara internal di file html. Saya juga mencoba mencari mengenai efek hover dan menemukan link [ini](https://www.geeksforgeeks.org/responsive-card-with-hover-effect-using-html-and-css/) sebagai referensi.
+ 
+ 
 ## Tugas 4
 Link :  [Todolist](https://rikzapbp2.herokuapp.com/todolist)
 - `{% csrf_token %}` berfungsi untuk mencegah terjadinya serangan Cross Site Request Forgery (CSRF), yaitu serangan berupa request palsu yang tidak diinginkan oleh user.  Cara kerja csrf token yaitu dengan membuat suatu token dari server-side yang akan selalu dicek ketika user melakukan request. Jika suatu request tidak memiliki token tadi maka request tersebut tidak akan dieksekusi. Jika kita tidak menggunakan `{% csrf_token %}` maka CSRF attack bisa terjadi dan keamanan user dan web itu sendiri tidak terjamin.
